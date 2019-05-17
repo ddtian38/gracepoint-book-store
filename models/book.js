@@ -30,7 +30,15 @@ const bookSchema = new Schema ({
     genre: {
         type: String,
         required: true
-    }
+    },
+
+    comment: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        }
+
+    ]
 })
 
 bookSchema.plugin(findOrCreate)
